@@ -2,7 +2,6 @@ package util.excel;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Locale;
 
 import jxl.CellView;
@@ -55,15 +54,13 @@ public class TutorialJExcel {
 
 		WritableWorkbook workbook = Workbook.createWorkbook(arquivo, wbSettings);
 		// Define um nome para a planilha
-		workbook.createSheet("Termo de Moeda", 0);
+		workbook.createSheet("Folha 1", 0);
 		WritableSheet excelSheet = workbook.getSheet(0);
 		criaLabel(excelSheet);
 
 		workbook.write();
 		workbook.close();
-		
-		byte[] fileContent = Files.readAllBytes(arquivo.toPath());
-		
+
 	}
 
 	// Método responsável pela definição das labels
@@ -76,40 +73,40 @@ public class TutorialJExcel {
 		this.criarLabelsCabecalho(sheet);
 
 		addLabel(sheet, 3, 5, "CLIENTE");
-		addLabel(sheet, 4, 5, "BRADESCO");
-		addLabel(sheet, 5, 5, "Simples");
+		addLabel(sheet, 4, 5, "EMPRESA TESTE");
+		addLabel(sheet, 5, 5, "OPERAÇÃO");
 		addLabel(sheet, 6, 5, "");
 
 		addLabel(sheet, 3, 7, "27/04/2018");
 		addLabel(sheet, 4, 7, "27/04/2018");
 		addLabel(sheet, 5, 7, "27/04/2018");
 		addLabel(sheet, 6, 7, "103");
-		
+
 		addLabel(sheet, 3, 9, "220 - DOLAR EUA");
 		addLabel(sheet, 4, 9, "790 - REAL");
 		addLabel(sheet, 5, 9, "100.000,00");
 		addLabel(sheet, 6, 9, "3,46920000");
-		
+
 		addLabel(sheet, 3, 11, "");
 		addLabel(sheet, 4, 11, "");
 		addLabel(sheet, 5, 11, "");
 		addLabel(sheet, 6, 11, "");
-		
+
 		addLabel(sheet, 3, 13, "");
 		addLabel(sheet, 4, 13, "");
 		addLabel(sheet, 5, 13, "");
 		addLabel(sheet, 6, 13, "");
-		
+
 		addLabel(sheet, 3, 15, "");
-		addLabel(sheet, 4, 15, "SISBACEN");
+		addLabel(sheet, 4, 15, "TESTE");
 		addLabel(sheet, 5, 15, "");
-		addLabel(sheet, 6, 15, "D-1");
-		
+		addLabel(sheet, 6, 15, "D-15");
+
 		addLabel(sheet, 3, 17, "Fechamento");
-		addLabel(sheet, 4, 17, "CETIP");
+		addLabel(sheet, 4, 17, "TESTE");
 		addLabel(sheet, 5, 17, "");
 		addLabel(sheet, 6, 17, "");
-		
+
 	}
 
 	// Adiciona cabecalho
